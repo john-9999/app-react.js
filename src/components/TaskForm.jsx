@@ -46,7 +46,7 @@ function TaskForm() {
       <form className="bg-slate-800 p-10 mb-4" onSubmit={hundleSubmit}>
         
         <h1 className=" text-xl font-bold text-zinc-50 capitalize mb-3 ">Organizá tu alimentación</h1>
-        <h4 className=" text-2x1 font-bold text-zinc-50 mb-3 ">Desarrollado por <a className="text-sky-400" href="https://john-9999.github.io/Frontendprojects.github.io/#">Juan Manuel Perez</a></h4>
+        <h4 className=" text-2x1 font-bold text-zinc-50 mb-3 ">Desarrollado por <a className="text-sky-400" target="_blank" href="https://john-9999.github.io/Frontendprojects.github.io/#">Juan Manuel Perez</a></h4>
         <input
           placeholder="Comida (desayuno,almuerzo,merienda,cena)"
           onChange={(e) => {

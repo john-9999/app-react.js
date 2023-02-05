@@ -33,9 +33,9 @@ function TaskCard({ task }) {
   mt-4: margin top de 4
   */
   return (
-    <div className='bg-gray-800 text-white p-4 rounded-md'>
-      <h1 className='text-xl font-bold capitalize'>{task.title}</h1>
-      <p className='text-stone-50 text-sm'>{task.description}</p>
+    <div className='bg-gray-800 text-white p-4 rounded-md overflow-auto'>
+      <h1 className='text-2x1 font-bold capitalize'>{task.title}</h1>
+      <p className='text-stone-50 text-sm mt-3 '>{task.description}</p>
       <button className='bg-sky-400 px-2 py-1 rounded-md mt-4 hover:bg-red-400' onClick={()=>deleteTask(task.id)}>
         Eliminar tarea 
       </button>

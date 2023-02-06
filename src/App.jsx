@@ -13,7 +13,7 @@ p-10: padding 10 hacia todos los lados
 function App(){
   return (
     <main className="bg-zinc-900 h-screen">
-    <div className="container mx-auto p-10">
+    <div className="container bg-zinc-900 mx-auto p-10">
       <TaskForm />
       <TaskList />
     </div>

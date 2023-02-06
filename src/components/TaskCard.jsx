@@ -1,5 +1,6 @@
 import { useContext } from 'react'/*ya que queremos utilizar algo del contexto, importamos el contexto*/
 import { TaskContext } from "../context/TaskContext";
+import { tasks } from '../data/tasks';
 
 /*ESTA FUNCIÓN MOSTRARÁ LAS TAREAS NUEVAS QUE SE AGREGEN */
 /*AL BOTON ELIMINAR TAREA LE CREAMOS LA FUNCIÓN DE ELIMINAR Y LE PASAMOS COMO PARAMETRO EL task.id de cada tarea */
@@ -34,6 +35,7 @@ function TaskCard({ task }) {
   */
   return (
     <div className='bg-gray-800 text-white p-4 rounded-md overflow-auto'>
+      <h1 className='text-2x1 font-bold capitalize'>Día-Fecha: {task.fecha}</h1>
       <h1 className='text-2x1 font-bold capitalize'>{task.title}</h1>
       <p className='text-stone-50 text-sm mt-3 '>{task.description}</p>
       <button className='bg-sky-400 px-2 py-1 rounded-md mt-4 hover:bg-red-400' onClick={()=>deleteTask(task.id)}>

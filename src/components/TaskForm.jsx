@@ -7,6 +7,7 @@ import { TaskContext } from "../context/TaskContext";
 function TaskForm() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [fecha, setFecha]= useState("");
   const {createTask} = useContext(TaskContext)
 
   /*FUNCIÓN ENFOCADA EN EL COMPONENTE DEL FORM (REACT DEV TOOLS)*/
@@ -14,11 +15,13 @@ function TaskForm() {
   /*Al guardar y hacer submit, crearas la tarea y mostrarás el title y description*/
   const hundleSubmit = (e) => {
     e.preventDefault();
-    console.log(title, description);
+    console.log(fecha,title, description,);
     createTask({
+      fecha,
       title,
       description,
     }); /*a createTask le pasamos como parametro el title y description para crear la nueva tarea, componente creado en la function createTask que está en App.jsx (la nueva tarea que agregamos en el formulario) */
+    setFecha("");
     setTitle(""); /*ACTUALIZAMOS Y LIMPIAMOS EL ESTADO DEL HOOK, DSP DE AÑADIR UNA NUEVA TAREA*/
     setDescription(""); /*ACTUALIZAMOS Y LIMPIAMOS EL ESTADO DEL HOOK, DSP DE AÑADIR UNA NUEVA TAREA*/
   };
@@ -47,6 +50,16 @@ function TaskForm() {
         
         <h1 className=" text-xl font-bold text-zinc-50 capitalize mb-3 ">Organizá tu alimentación</h1>
         <h4 className=" text-2x1 font-bold text-zinc-50 mb-3 ">Desarrollado por <a className="text-sky-400" target="_blank" href="https://john-9999.github.io/Frontendprojects.github.io/#">Juan Manuel Perez</a></h4>
+        
+        <input 
+          placeholder="Dia y Fecha"
+          onChange={(e) => {
+            setFecha(e.target.value)
+          }}
+          value={ fecha }
+          className="bg-white p-3 w-full mb-2"
+        ></input>
+
         <input
           placeholder="Comida (desayuno,almuerzo,merienda,cena)"
           onChange={(e) => {
@@ -56,6 +69,7 @@ function TaskForm() {
           autoFocus /*Al refrescar la página inicia el puntero en el input*/
           className="bg-slate-300 p-3 w-full mb-2"
         ></input>
+
         <textarea
           placeholder="Descripción"
           onChange={(e) => {

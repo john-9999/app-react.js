@@ -19,7 +19,7 @@ function TaskList() {
   /*className="grid grid-cols-4": numero de columnas dentro del div que contiene la lista de tareas
   gap-2: Distancia de Espacio entre las columnas*/
   return (
-    <div className="grid grid-cols-4 gap-2">
+    <div className="grid grid-cols-2 gap-4">
       {tasks.map((task) => (
         <TaskCard
           key={task.id}
